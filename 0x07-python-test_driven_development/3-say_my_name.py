@@ -1,36 +1,26 @@
 #!/usr/bin/python3
 
+""" say_my_name
+Prints My name is `first_name` `last_name`
+If either argument is not a string it raises TypeError
+"""
 
-"""Defines a matrix division function."""
 
-
-def matrix_divided(matrix, div):
-    """Divide all elements of a matrix.
-    Args:
-        matrix (list): A list of lists of ints or floats.
-        div (int/float): The divisor.
-    Raises:
-        TypeError: If the matrix contains non-numbers.
-        TypeError: If the matrix contains rows of different sizes.
-        TypeError: If div is not an int or float.
-        ZeroDivisionError: If div is 0.
-    Returns:
-        A new matrix representing the result of the division.
+def say_my_name(first_name, last_name=""):
+    """ add_integer - prints first and last name
     """
-    if (not isinstance(matrix, list) or matrix == [] or
-            not all(isinstance(row, list) for row in matrix) or
-            not all((isinstance(ele, int) or isinstance(ele, float))
-                    for ele in [num for row in matrix for num in row])):
-        raise TypeError("matrix must be a matrix (list of lists) of "
-                        "integers/floats")
+    if not isinstance(first_name, str):
+        raise TypeError("first_name must be a string")
+    if not isinstance(last_name, str):
+        raise TypeError("last_name must be a string")
+    print('My name is {:s} {:s}'.format(first_name, last_name))
 
-    if not all(len(row) == len(matrix[0]) for row in matrix):
-        raise TypeError("Each row of the matrix must have the same size")
 
-    if not isinstance(div, int) and not isinstance(div. float):
-        raise TypeError("div must be a number")
-
-    if div == 0:
-        raise ZeroDivisionError("division by zero")
-
-    return ([list(map(lambda x: round(x / div, 2), row)) for row in matrix])
+if __name__ == '__main__':
+    say_my_name("John", "Smith")
+    say_my_name("Walter", "White")
+    say_my_name("Bob")
+    try:
+        say_my_name("Bob", 12)
+    except Exception as e:
+        print(e)
