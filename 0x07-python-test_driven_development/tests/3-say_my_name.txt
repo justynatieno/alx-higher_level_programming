@@ -13,12 +13,12 @@ This is an example text file in reStructuredText format.  First import
 
 
 # first_name = str, last_name = str
->>> say_my_name("Justine", "Omwandho")
-My name is Justine Omwandho
+>>> say_my_name("Justine", "Atieno")
+My name is Justine Atieno
 
 # first_name = str, last_name = ""
->>> say_my_name("Justyna")
-My name is Justyna
+>>> say_my_name("Akumu")
+My name is Akumu
 
 # first_name = None, last_name = ""
 >>> say_my_name(None)
@@ -33,7 +33,7 @@ Traceback (most recent call last):
 TypeError: first_name must be a string
 
 # first_name = str, last_name = None
->>> say_my_name("Danny", None)
+>>> say_my_name("Lilian", None)
 Traceback (most recent call last):
 ...
 TypeError: last_name must be a string
