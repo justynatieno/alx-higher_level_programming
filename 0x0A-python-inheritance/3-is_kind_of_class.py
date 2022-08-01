@@ -16,8 +16,3 @@ def is_kind_of_class(obj, a_class):
     if isinstance(obj, a_class):
         return True
     return False
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
-Terms
-
