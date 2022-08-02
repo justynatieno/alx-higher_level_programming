@@ -1,21 +1,28 @@
 #!/usr/bin/python3
-"""defines class Student"""
 
 
-class student:
-    """represent a student"""
+def class_to_json(obj):
+    """Serialize class attributes to dictionary
+    Args:
+        obj (object): object to be serialized
+    """
+    return (obj.__dict__)
+
+
+class Student:
+    """Student class"""
 
     def __init__(self, first_name, last_name, age):
-        """Initialize a new Student.
+        """__init__ method
         Args:
-            first_name (str): The first name of the student.
-            last_name (str): The last name of the student.
-            age (int): The age of the student.
+            first_name (str): first name
+            last_name (str): last name
+            age (int): age of student
         """
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
 
     def to_json(self):
-        """Get a dictionary representation of the Student."""
-        return self.__dict__
+        """Serializes object to dictionary"""
+        return class_to_json(self)
