@@ -1,9 +1,11 @@
 #!/usr/bin/python3
-""" script that fetches https://intranet.hbtn.io/status using requests """
-if __name__ == '__main__':
-    import requests
+"""fetches from https://intranet.hbtn.io/status."""
+import requests
 
-    response = requests.get('https://intranet.hbtn.io/status')
-    print('Body response:')
-    print('\t- type: {}'.format(type(response.text)))
-    print('\t- content: {}'.format(response.text))
+
+if __name__ == "__main__":
+    url = "https://alx-intranet.hbtn.io/status"
+    r = requests.get(url)
+    print("Body response:")
+    print("\t- type: {}".format(type(r.text)))
+    print("\t- content: {}".format(r.text))
