@@ -1,6 +1,6 @@
 $.ajax({
   type: 'GET',
-  url: 'https://swapi.co/api/films/?format=json',
+  url: 'https://swapi-api.hbtn.io/api/films/?format=json',
   success: function (data) {
     $.each(data['results'], function (k, v) {
       let title = v['title'];
